@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+
+
+    <div id="d2"></div>
+    <script type="text/babel">
+      ReactDOM.render(
+        <h1>Hello, world!</h1>,
+        document.getElementById('d2')
+      );
+    </script>
+
+    <div id="d3"></div>
+    <script type="text/babel">
+      ReactDOM.render(
+        <h1>success</h1>
+        ,document.getElementById('d3')
+      );
+    </script>
+
+
+    <div id="d1"></div>
+    <script type="text/babel">
+
+    var names=['1','2','3','4','5'];
+    ReactDOM.render(
+      <div>
+          {names.map(function(name){
+            return <div>你好！{name}！</div>
+      })}
+      </div>,
+      document.getElementById('d1')
+    );
+    </script>
+
+    <div id="d5"></div>
+    <script type="text/babel">
+      var arr=[
+        <h1 key="2">努力！</h1>,
+        <h2 key="1">工作！</h2>
+      ];
+      ReactDOM.render(
+        <div>{arr}</div>,
+        document.getElementById('d5')
+      );
+
+    </script>
+
+
+
+
+    <div id="d4"></div>
+    <script type="text/babel">
+      var n=['a','b','c'];
+    ReactDOM.render(
+
+      <div>
+      {
+      n.map(function(ss){
+        return <div> Hello {ss}! </div>
+      })}
+      </div>
+      ,document.getElementById('d4')
+    );
+
+    </script>
+
+<!--代码封装成组件，在网页中插入组件，用React.createClass方法来生成一个组件  -->
+
+    <div id="example"></div>
+       <script type="text/babel">
+         var HelloMessage = React.createClass({
+           render: function() {
+             return <h1>Hello {this.props.name}</h1>;
+           }
+         });
+
+         ReactDOM.render(
+           <HelloMessage name="John" />,
+           document.getElementById('example')
+         );
+       </script>
+
+
+       <div id="q1"></div>
+       <script type="text/babel">
+          var Hyu=React.createClass({
+            render:function(){
+              return<h1>你好 {this.props.name}</h1>;
+            }
+          });
+          ReactDOM.render(
+            <Hyu name="jack" />,
+            document.getElementById('q1')
+          );
+       </script>
+  </body>
+</html>
